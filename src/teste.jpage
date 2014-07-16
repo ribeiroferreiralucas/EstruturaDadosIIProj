@@ -1,0 +1,17 @@
+java.io.RandomAccessFile raf = new java.io.RandomAccessFile(new java.io.File("livros.txt"), "r");
+raf.readLine();
+raf.readLine();
+raf.readLine();
+raf.readLine();
+raf.readLine();
+raf.readLine();
+long filePointer = raf.getFilePointer();
+String line = raf.readLine();
+System.out.println(line);
+raf.close();
+raf = null;
+raf = new java.io.RandomAccessFile(new java.io.File("livros.txt"), "r");
+raf.seek(filePointer);
+line = raf.readLine();
+System.out.println(line);
+raf.close();
